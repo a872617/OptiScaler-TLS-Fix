@@ -1,0 +1,114 @@
+name: 崩溃反馈
+description: 打补丁后仍然崩溃 / 无法启动时，用这个模板反馈
+title: "[崩溃] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量把下面几项填全，尤其是 **错误偏移**，它决定了能不能定位问题。
+
+        > 查询方法：`Win+R` → 输入 `eventvwr` → Windows 日志 → 应用程序 → 找最新的「应用程序错误」，
+        > 里面有一行「错误偏移」，例如 `0x2bbda`。
+
+  - type: input
+    id: game
+    attributes:
+      label: 游戏名称
+      placeholder: 燕云十六声
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: OptiScaler 版本
+      description: 右键 DLL → 属性 → 详细信息，看「产品版本」
+      placeholder: 0.9.1.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: proxy
+    attributes:
+      label: 代理 DLL 名称
+      options:
+        - winmm.dll
+        - dxgi.dll
+        - d3d12.dll
+        - dbghelp.dll
+        - version.dll
+        - wininet.dll
+        - winhttp.dll
+        - OptiScaler.dll
+        - 其它
+    validations:
+      required: true
+
+  - type: dropdown
+    id: patched
+    attributes:
+      label: 是否已经用本工具打过补丁
+      options:
+        - 是，打过补丁后仍然崩溃
+        - 是，打了补丁但游戏打不开 / 未响应
+        - 否，原版就崩溃
+    validations:
+      required: true
+
+  - type: input
+    id: offset
+    attributes:
+      label: 错误偏移
+      description: 事件查看器里的「错误偏移」，或崩溃弹窗里的地址
+      placeholder: "0x2bbda"
+    validations:
+      required: true
+
+  - type: input
+    id: module
+    attributes:
+      label: 出错模块
+      placeholder: WINMM.dll
+    validations:
+      required: false
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 现象描述
+      description: 是直接崩？窗口出来未响应？黑屏闪退？有没有报错弹窗？
+      placeholder: 双击启动后黑屏约 2 秒闪退，事件查看器里有 APPCRASH
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: 系统与硬件
+      description: 系统版本 / 显卡 / 驱动版本 / 游戏是 Steam 国际服还是国服
+      placeholder: |
+        Windows 11 26100，RX 6600 XT，驱动 32.0.21045.16010
+        游戏：网易国服（发烧游戏启动器）
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息（可选）
+      description: 崩溃转储路径、OptiScaler 日志、试过哪些版本等
+      placeholder: |
+        试过 0.9.1 / 0.9.2 / 0.9.4，都崩在 WINMM.dll
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我已经看过 README 里的常见问题
+          required: true
+        - label: 这是单机 / 自用环境，我了解修改 DLL 的风险
+          required: true
