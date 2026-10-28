@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用说明 & 常见问题
+    url: https://github.com/a872617/OptiScaler-TLS-Fix
+    about: 打不开、没效果、怎么回滚，先看 README
+  - name: 下载最新版
+    url: https://github.com/a872617/OptiScaler-TLS-Fix/releases
+    about: 直接下载 patcher.exe 和 patch.bat
