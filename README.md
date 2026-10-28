@@ -3,6 +3,8 @@
 > 针对 **OptiScaler 0.9.x** 代理 DLL 启动崩溃的通用本地补丁。  
 > A universal local patch for the **OptiScaler 0.9.x** startup crash.
 
+> 📺 视频讲解（B 站）：https://www.bilibili.com/video/BV1bQsQ6dEPM/
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
