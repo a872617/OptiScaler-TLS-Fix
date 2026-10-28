@@ -1,0 +1,24 @@
+# 编译产物
+*.obj
+*.o
+*.pdb
+*.ilk
+
+# 打补丁时的临时文件
+__patched.tmp
+*.bak
+
+# 系统文件
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 测试用的 OptiScaler 副本（不要提交，版权属于原作者）
+winmm.dll
+dxgi.dll
+d3d12.dll
+version.dll
+dbghelp.dll
+wininet.dll
+winhttp.dll
+OptiScaler.dll
